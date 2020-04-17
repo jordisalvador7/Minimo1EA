@@ -17,5 +17,10 @@ export class RolesService {
 
   getRoles(): Observable<Modelrole[]> {
     return this.http.get<Modelrole[]>(this.environment.urlRoles + '/getRoles');
-    }
+  }
+
+  addRoles(addrole: Modelrole){//: Observable<void> 
+    return this.http.post(this.environment.urlRoles + '/addRole', addrole);
+  }
+
 }

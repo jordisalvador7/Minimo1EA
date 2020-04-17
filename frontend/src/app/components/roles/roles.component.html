@@ -1,1 +1,9 @@
-<p>roles works!</p>
+<h1>Role List</h1>
+<div>
+    <mat-list>
+        <button (click) = "getRoles()">Show Roles</button>
+        <mat-list-item *ngFor ="let role of roles">
+            <button>{{role.name}}</button>
+        </mat-list-item>
+    </mat-list>
+</div>
