@@ -34,4 +34,14 @@ async function getRoles (req, res){
     }
 }
 
-module.exports = {postRole, getRoles};
+async function updateRole(req, res){
+    console.log(req.body);
+    const roleid = await RoleSchema.findOne(req.body,'_id');
+    console.log(roleid);
+    const {name} = req.params;
+    const subject = await RoleSchema.findOneAndUpdate({name},{$push:{roles: roleid}},{new: true})
+    res.json(subject)
+
+}
+
+module.exports = {postRole, getRoles, updateRole};
