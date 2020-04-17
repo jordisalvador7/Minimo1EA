@@ -7,3 +7,5 @@ let rolesControl = require ("../controllers/roleControl");
 
 router.post('/addRole', rolesControl.postRole);
 router.get('/getRoles', rolesControl.getRoles);
+
+module.exports = router;
