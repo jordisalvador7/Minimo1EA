@@ -59,9 +59,9 @@ export class AddroleComponent implements OnInit {
     .subscribe(res =>{
       let addedRole = res as Modelrole;
       if ((newrole.name === addedRole.name)) {
-        alert(`Student ${addedRole.name} successfully created`);
+        alert(`Role ${addedRole.name} successfully created`);
       } else {
-        alert(`Error creating Student ${addedRole.name}`);
+        alert(`Error creating Role ${addedRole.name}`);
       }
     });
 
@@ -69,7 +69,7 @@ export class AddroleComponent implements OnInit {
   }
 
   public toggleAddRole() {
-    this.visibleAddRole = !this.visibleAddRole; 
+    this.visibleAddRole = !this.visibleAddRole;
   }
 
 }

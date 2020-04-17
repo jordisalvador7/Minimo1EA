@@ -1,10 +1,26 @@
 <h1>Add Role</h1>
    <div class = "container"> 
     
-    <form>
-
-    
-          
-    <button size = "large" shape = "round" type = "submit">Add new Student</button>
+    <form class="mt-4" [formGroup]="addRoleForm" (ngSubmit)="addRole()">
+        <div class="form-group">
+            <label>Name</label>
+            <input [class]="addRoleForm.get('roleNameInput').touched && addRoleForm.get('RoleNameInput').invalid" 
+            type="text" class="form-control" formControlName="roleNameInput" placeholder="Enter Role name">
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input [class]= "addRoleForm.get('roleDescritpionInput').touched && addRoleForm.get('RoleDescriptionInput').invalid" 
+            type="text" class="form-control" formControlDescription="roleDescriptionInput" placeholder="Enter Role description">
+        </div>
+        <div class="form-group">
+            <label>Options</label>
+            <input [class]= "addRoleForm.get('roleOptionsInput').touched && addRoleForm.get('RoleOptionsInput').invalid" 
+            type="text" class="form-control" formControlOptions="roleOptionsInput" placeholder="Enter Role options">
+        </div>
+        
+            <div class="col-md-10">
+                <button class="btn btn-success" type="submit" [disabled]="!addRoleForm.valid">Create Role</button>
+            </div>            
+        
     </form>
     </div>
